@@ -15,6 +15,34 @@ from langchain.prompts import PromptTemplate
 # Load environment variables
 load_dotenv()
 
+@st.cache_resource
+def initialize_embeddings():
+    """Initialize embeddings model with caching"""
+    try:
+        st.info("Loading embeddings model... This may take a moment on first run.")
+        embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2",
+            model_kwargs={'device': 'cpu'},
+            encode_kwargs={'normalize_embeddings': True}
+        )
+        st.success("Embeddings model loaded successfully!")
+        return embeddings
+    except Exception as e:
+        st.warning(f"Primary embeddings model failed: {str(e)}")
+        st.info("Trying fallback model...")
+        # Fallback to a simpler approach
+        try:
+            embeddings = HuggingFaceEmbeddings(
+                model_name="all-MiniLM-L6-v2",
+                model_kwargs={'device': 'cpu'}
+            )
+            st.success("Fallback embeddings model loaded successfully!")
+            return embeddings
+        except Exception as e2:
+            st.error(f"All embeddings models failed: {str(e2)}")
+            st.error("Please check your internet connection and try again.")
+            st.stop()
+
 def extract_pdf_text(uploaded_file):
     """Extract text from PDF file using pypdf"""
     try:
@@ -118,11 +146,8 @@ def load_rag_pipeline(kb_hash: str, use_uploaded: bool = False):
     )
     chunks = text_splitter.split_text(cv_content)
     
-    # Create embeddings
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",
-        model_kwargs={'device': 'cpu'}
-    )
+    # Create embeddings with cached initialization
+    embeddings = initialize_embeddings()
     
     # Create vector store
     vectorstore = FAISS.from_texts(chunks, embeddings)
