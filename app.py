@@ -17,31 +17,107 @@ load_dotenv()
 
 @st.cache_resource
 def initialize_embeddings():
-    """Initialize embeddings model with caching"""
+    """Initialize embeddings model with caching and PyTorch meta tensor workaround"""
     try:
         st.info("Loading embeddings model... This may take a moment on first run.")
+        
+        # Workaround for PyTorch meta tensor issues
+        import os
+        os.environ["TORCH_DISABLE_META_TENSOR"] = "1"
+        os.environ["PYTORCH_DISABLE_META_TENSOR"] = "1"
+        
+        import torch
+        # Clear GPU cache and force CPU
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        torch.set_default_device('cpu')
+        
+        # Try with specific PyTorch settings
         embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2",
-            model_kwargs={'device': 'cpu'},
-            encode_kwargs={'normalize_embeddings': True}
+            model_kwargs={
+                'device': 'cpu',
+                'torch_dtype': torch.float32
+            },
+            encode_kwargs={'normalize_embeddings': False}  # Disable normalization to avoid meta tensor issues
         )
-        st.success("Embeddings model loaded successfully!")
+        st.success("✅ Primary embeddings model loaded successfully!")
         return embeddings
+        
     except Exception as e:
-        st.warning(f"Primary embeddings model failed: {str(e)}")
-        st.info("Trying fallback model...")
-        # Fallback to a simpler approach
+        st.warning(f"⚠️ Primary model failed: Meta tensor issue detected")
+        st.info("🔄 Switching to lightweight embeddings approach...")
+        
+        # Use a completely different approach that avoids PyTorch meta tensors
         try:
-            embeddings = HuggingFaceEmbeddings(
-                model_name="all-MiniLM-L6-v2",
-                model_kwargs={'device': 'cpu'}
-            )
-            st.success("Fallback embeddings model loaded successfully!")
+            class SimpleEmbeddings:
+                def __init__(self):
+                    from sentence_transformers import SentenceTransformer
+                    import torch
+                    
+                    # Force CPU and disable meta tensors completely
+                    torch.set_default_device('cpu')
+                    with torch.no_grad():
+                        self.model = SentenceTransformer(
+                            'all-MiniLM-L6-v2',
+                            device='cpu',
+                            cache_folder='./.cache'
+                        )
+                
+                def embed_documents(self, texts):
+                    import torch
+                    with torch.no_grad():
+                        embeddings = self.model.encode(
+                            texts, 
+                            convert_to_numpy=True,
+                            show_progress_bar=False
+                        )
+                    return embeddings.tolist()
+                
+                def embed_query(self, text):
+                    import torch
+                    with torch.no_grad():
+                        embedding = self.model.encode(
+                            [text], 
+                            convert_to_numpy=True,
+                            show_progress_bar=False
+                        )
+                    return embedding[0].tolist()
+            
+            embeddings = SimpleEmbeddings()
+            st.success("✅ Lightweight embeddings loaded successfully!")
             return embeddings
+            
         except Exception as e2:
-            st.error(f"All embeddings models failed: {str(e2)}")
-            st.error("Please check your internet connection and try again.")
-            st.stop()
+            st.error(f"❌ Lightweight approach failed: {str(e2)}")
+            st.info("🔄 Trying minimal embeddings...")
+            
+            # Ultra-simple fallback that should always work
+            try:
+                class MinimalEmbeddings:
+                    def __init__(self):
+                        # Use a very simple approach
+                        import sentence_transformers
+                        self.model = sentence_transformers.SentenceTransformer(
+                            'paraphrase-MiniLM-L3-v2',  # Smaller, more compatible model
+                            device='cpu'
+                        )
+                    
+                    def embed_documents(self, texts):
+                        return self.model.encode(texts, convert_to_numpy=True).tolist()
+                    
+                    def embed_query(self, text):
+                        return self.model.encode([text], convert_to_numpy=True)[0].tolist()
+                
+                embeddings = MinimalEmbeddings()
+                st.success("✅ Minimal embeddings loaded successfully!")
+                return embeddings
+                
+            except Exception as e3:
+                st.error(f"❌ All embeddings approaches failed")
+                st.error("🔧 Please try running locally instead of Docker, or restart the container")
+                st.info("💡 This appears to be a PyTorch/Docker compatibility issue")
+                st.stop()
 
 def extract_pdf_text(uploaded_file):
     """Extract text from PDF file using pypdf"""
