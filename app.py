@@ -17,107 +17,135 @@ load_dotenv()
 
 @st.cache_resource
 def initialize_embeddings():
-    """Initialize embeddings model with caching and PyTorch meta tensor workaround"""
+    """Initialize embeddings with comprehensive fallback system"""
+    import os
+    
+    # First try TF-IDF approach (most reliable)
     try:
-        st.info("Loading embeddings model... This may take a moment on first run.")
+        from sklearn.feature_extraction.text import TfidfVectorizer
+        import numpy as np
         
-        # Workaround for PyTorch meta tensor issues
-        import os
-        os.environ["TORCH_DISABLE_META_TENSOR"] = "1"
-        os.environ["PYTORCH_DISABLE_META_TENSOR"] = "1"
-        
-        import torch
-        # Clear GPU cache and force CPU
-        if torch.cuda.is_available():
-            torch.cuda.empty_cache()
-        torch.set_default_device('cpu')
-        
-        # Try with specific PyTorch settings
-        embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2",
-            model_kwargs={
-                'device': 'cpu',
-                'torch_dtype': torch.float32
-            },
-            encode_kwargs={'normalize_embeddings': False}  # Disable normalization to avoid meta tensor issues
-        )
-        st.success("✅ Primary embeddings model loaded successfully!")
-        return embeddings
-        
-    except Exception as e:
-        st.warning(f"⚠️ Primary model failed: Meta tensor issue detected")
-        st.info("🔄 Switching to lightweight embeddings approach...")
-        
-        # Use a completely different approach that avoids PyTorch meta tensors
-        try:
-            class SimpleEmbeddings:
-                def __init__(self):
-                    from sentence_transformers import SentenceTransformer
-                    import torch
+        class TfIdfEmbeddings:
+            def __init__(self):
+                self.vectorizer = TfidfVectorizer(
+                    max_features=384,  # Similar to sentence transformer dimensions
+                    stop_words='english',
+                    ngram_range=(1, 2)
+                )
+                self.is_fitted = False
+            
+            def embed_documents(self, texts):
+                if not texts:
+                    return []
                     
-                    # Force CPU and disable meta tensors completely
-                    torch.set_default_device('cpu')
-                    with torch.no_grad():
-                        self.model = SentenceTransformer(
-                            'all-MiniLM-L6-v2',
-                            device='cpu',
-                            cache_folder='./.cache'
-                        )
+                if not self.is_fitted:
+                    # Fit on the provided texts
+                    tfidf_matrix = self.vectorizer.fit_transform(texts)
+                    self.is_fitted = True
+                else:
+                    tfidf_matrix = self.vectorizer.transform(texts)
                 
-                def embed_documents(self, texts):
-                    import torch
-                    with torch.no_grad():
-                        embeddings = self.model.encode(
-                            texts, 
-                            convert_to_numpy=True,
-                            show_progress_bar=False
-                        )
-                    return embeddings.tolist()
-                
-                def embed_query(self, text):
-                    import torch
-                    with torch.no_grad():
-                        embedding = self.model.encode(
-                            [text], 
-                            convert_to_numpy=True,
-                            show_progress_bar=False
-                        )
-                    return embedding[0].tolist()
+                # Convert to dense array and then to list
+                return tfidf_matrix.toarray().tolist()
             
-            embeddings = SimpleEmbeddings()
-            st.success("✅ Lightweight embeddings loaded successfully!")
+            def embed_query(self, text):
+                if not text or not self.is_fitted:
+                    # If not fitted yet, return a zero vector
+                    return [0.0] * 384
+                
+                query_vector = self.vectorizer.transform([text])
+                return query_vector.toarray()[0].tolist()
+        
+        embeddings = TfIdfEmbeddings()
+        
+        # Test the embeddings with a simple example
+        test_texts = ["This is a test document"]
+        test_vectors = embeddings.embed_documents(test_texts)
+        
+        if test_vectors and len(test_vectors[0]) > 0:
+            st.success("✅ TF-IDF embeddings initialized successfully!")
+            st.info("ℹ️ Using TF-IDF vectorization for maximum compatibility")
             return embeddings
+        else:
+            raise Exception("TF-IDF test failed")
             
-        except Exception as e2:
-            st.error(f"❌ Lightweight approach failed: {str(e2)}")
-            st.info("🔄 Trying minimal embeddings...")
+    except Exception as e1:
+        st.warning(f"⚠️ TF-IDF approach failed: {str(e1)}")
+        
+        # Fallback to PyTorch-based embeddings
+        try:
+            import torch
+            # Set environment variable to disable meta tensor
+            os.environ['TORCH_DISABLE_META_TENSOR'] = '1'
             
-            # Ultra-simple fallback that should always work
+            with torch.no_grad():
+                # Force CPU usage and avoid meta tensors
+                embeddings = HuggingFaceEmbeddings(
+                    model_name="sentence-transformers/all-MiniLM-L6-v2",
+                    model_kwargs={
+                        'device': 'cpu',
+                        'torch_dtype': torch.float32
+                    },
+                    encode_kwargs={'normalize_embeddings': False}
+                )
+            
+            # Test the embeddings
+            test_vector = embeddings.embed_query("test")
+            if test_vector and len(test_vector) > 0:
+                st.success("✅ PyTorch embeddings loaded successfully!")
+                return embeddings
+            else:
+                raise Exception("PyTorch embeddings test failed")
+                
+            st.error(f"❌ PyTorch embeddings failed: {str(e2)}")
+            
+            # Final fallback: Simple text-based embeddings
             try:
-                class MinimalEmbeddings:
+                import hashlib
+                import re
+                
+                class SimpleTextEmbeddings:
                     def __init__(self):
-                        # Use a very simple approach
-                        import sentence_transformers
-                        self.model = sentence_transformers.SentenceTransformer(
-                            'paraphrase-MiniLM-L3-v2',  # Smaller, more compatible model
-                            device='cpu'
-                        )
+                        self.vocab = {}
+                        self.dimension = 384
+                    
+                    def _text_to_vector(self, text):
+                        # Simple text to vector conversion
+                        if not text:
+                            return [0.0] * self.dimension
+                        
+                        # Clean and tokenize text
+                        words = re.findall(r'\w+', text.lower())
+                        
+                        # Create a simple hash-based vector
+                        vector = [0.0] * self.dimension
+                        for i, word in enumerate(words[:self.dimension]):
+                            # Use hash to create pseudo-random but deterministic values
+                            hash_val = hash(word) % self.dimension
+                            vector[hash_val] += 1.0
+                        
+                        # Normalize
+                        norm = sum(x*x for x in vector) ** 0.5
+                        if norm > 0:
+                            vector = [x/norm for x in vector]
+                        
+                        return vector
                     
                     def embed_documents(self, texts):
-                        return self.model.encode(texts, convert_to_numpy=True).tolist()
+                        return [self._text_to_vector(text) for text in texts]
                     
                     def embed_query(self, text):
-                        return self.model.encode([text], convert_to_numpy=True)[0].tolist()
+                        return self._text_to_vector(text)
                 
-                embeddings = MinimalEmbeddings()
-                st.success("✅ Minimal embeddings loaded successfully!")
+                embeddings = SimpleTextEmbeddings()
+                st.success("✅ Simple text embeddings initialized!")
+                st.info("ℹ️ Using basic text processing (emergency fallback)")
                 return embeddings
                 
             except Exception as e3:
-                st.error(f"❌ All embeddings approaches failed")
-                st.error("🔧 Please try running locally instead of Docker, or restart the container")
-                st.info("💡 This appears to be a PyTorch/Docker compatibility issue")
-                st.stop()
+                st.error(f"❌ All embedding approaches failed!")
+                st.error(f"Final error: {str(e3)}")
+                raise Exception("Unable to initialize any embedding system")
 
 def extract_pdf_text(uploaded_file):
     """Extract text from PDF file using pypdf"""
