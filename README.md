@@ -1,28 +1,8 @@
 # CV RAG Chatbot - AI-Powered Professional Assistant
 
-<!-- Core Technologies -->
-![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=for-the-badge&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.48+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-0.3+-121212?style=for-the-badge&logo=chainlink&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Google_Gemini-2.0_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)
-
-<!-- AI & ML Technologies -->
-![FAISS](https://img.shields.io/badge/FAISS-Vector_DB-00D4AA?style=for-the-badge&logo=meta&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/🤗_Hugging_Face-Embeddings-FFD21E?style=for-the-badge&logoColor=black)
-![RAG](https://img.shields.io/badge/RAG-Technology-FF6B6B?style=for-the-badge&logo=openai&logoColor=white)
-![AI](https://img.shields.io/badge/AI-Powered-9146FF?style=for-the-badge&logo=openai&logoColor=white)
-
-<!-- Development & Deployment -->
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-Styling-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![PyPDF](https://img.shields.io/badge/PyPDF-File_Processing-FF6B6B?style=for-the-badge&logo=adobe&logoColor=white)
-
-<!-- Project Status -->
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge)
-![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.0.1-blue?style=for-the-badge)
+![python](https://img.shields.io/badge/python-3.9+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-orange.svg)
+![MLflow](https://img.shields.io/badge/MLflow-tracking-red.svg)
 
 A sophisticated AI-powered chatbot that answers questions about your CV/Resume using Retrieval Augmented Generation (RAG) technology with Google Gemini 2.0 Flash integration.
 
