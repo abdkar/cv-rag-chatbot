@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  cv-rag-chatbot:
+    build: .
+    container_name: cv-rag-chatbot
+    ports:
+      - "8501:8501"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_SERVER_HEADLESS=true
+    volumes:
+      - ./knowledge_base.txt:/app/knowledge_base.txt:ro
+      - ./phto.jpg:/app/phto.jpg:ro
+      - vector_store:/app/vector_store
+      - logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  vector_store:
+  logs:

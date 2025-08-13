@@ -1,0 +1,53 @@
+# Version control
+.git
+.gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Environment files
+.env
+.env.*
+
+# Streamlit
+.streamlit/
+
+# Vector store (will be created in container)
+vector_store/
+
+# Logs
+*.log
+*.pid
+logs/
+
+# Backup and temp files
+*_backup_*
+unused_files/
+documentation/
+test_files/
+.test.*
+.emergency.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# README files (keep only the main one)
+README_github.md
+test_results.md
+
+# Sample files
+knowledge_base_template.txt
+knowledge_base_sample.txt

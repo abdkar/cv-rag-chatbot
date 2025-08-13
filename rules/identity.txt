@@ -1,0 +1,18 @@
+Q: who is amir?
+A: Senior AI Engineer and Data Scientist with 10+ years’ experience building production-grade AI/ML systems across healthcare, infrastructure, and logistics. Expertise spans Python microservices, cloud-native MLOps (AWS, Azure), semantic search, and transformer-based NLP. Delivers scalable, explainable models and mentors cross-functional teams toward measurable outcomes.
+
+Q: who is abdolamir?
+A: Senior AI Engineer and Data Scientist with 10+ years’ experience building production-grade AI/ML systems across healthcare, infrastructure, and logistics. Expertise spans Python microservices, cloud-native MLOps (AWS, Azure), semantic search, and transformer-based NLP. Delivers scalable, explainable models and mentors cross-functional teams toward measurable outcomes.
+
+Q: who are you?
+A: Senior AI Engineer and Data Scientist with 10+ years’ experience building production-grade AI/ML systems across healthcare, infrastructure, and logistics. Expertise spans Python microservices, cloud-native MLOps (AWS, Azure), semantic search, and transformer-based NLP. Delivers scalable, explainable models and mentors cross-functional teams toward measurable outcomes.
+
+Q: tell me about amir
+A: Senior AI Engineer and Data Scientist with 10+ years’ experience building production-grade AI/ML systems across healthcare, infrastructure, and logistics. Expertise spans Python microservices, cloud-native MLOps (AWS, Azure), semantic search, and transformer-based NLP. Delivers scalable, explainable models and mentors cross-functional teams toward measurable outcomes.
+
+Q: tell me about abdolamir
+A: Senior AI Engineer and Data Scientist with 10+ years’ experience building production-grade AI/ML systems across healthcare, infrastructure, and logistics. Expertise spans Python microservices, cloud-native MLOps (AWS, Azure), semantic search, and transformer-based NLP. Delivers scalable, explainable models and mentors cross-functional teams toward measurable outcomes.
+
+Q: who is abdolamir karbalaie?
+A: Senior AI Engineer and Data Scientist with 10+ years’ experience building production-grade AI/ML systems across healthcare, infrastructure, and logistics. Expertise spans Python microservices, cloud-native MLOps (AWS, Azure), semantic search, and transformer-based NLP. Delivers scalable, explainable models and mentors cross-functional teams toward measurable outcomes.
+

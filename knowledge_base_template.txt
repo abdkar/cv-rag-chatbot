@@ -1,0 +1,88 @@
+# Sample CV Content for RAG Chatbot
+
+**Note:** Replace this content with your actual CV/Resume information.
+
+## Personal Information
+Name: [Your Full Name]
+Title: [Your Professional Title]
+Location: [Your Location]
+Email: [Your Email]
+LinkedIn: [Your LinkedIn Profile]
+GitHub: [Your GitHub Profile]
+
+## Professional Summary
+[Your professional summary - 2-3 sentences about your expertise and experience]
+
+## Technical Skills
+- Programming Languages: [List your programming languages]
+- Frameworks & Libraries: [List frameworks and libraries you use]
+- Tools & Technologies: [List tools and technologies]
+- Databases: [List databases you work with]
+- Cloud Platforms: [List cloud platforms]
+
+## Work Experience
+
+### [Job Title] at [Company Name]
+**Duration:** [Start Date] - [End Date]
+**Location:** [Location]
+
+- [Achievement or responsibility 1]
+- [Achievement or responsibility 2]
+- [Achievement or responsibility 3]
+
+### [Previous Job Title] at [Previous Company]
+**Duration:** [Start Date] - [End Date]
+**Location:** [Location]
+
+- [Achievement or responsibility 1]
+- [Achievement or responsibility 2]
+- [Achievement or responsibility 3]
+
+## Education
+
+### [Degree] in [Field of Study]
+**Institution:** [University/College Name]
+**Duration:** [Start Year] - [End Year]
+**Location:** [Location]
+
+- [Relevant coursework or achievements]
+- [GPA if relevant]
+- [Honors or awards]
+
+## Projects
+
+### [Project Name]
+**Technologies:** [Technologies used]
+**Duration:** [Project duration]
+
+[Brief description of the project, your role, and achievements]
+
+### [Another Project Name]
+**Technologies:** [Technologies used]
+**Duration:** [Project duration]
+
+[Brief description of the project, your role, and achievements]
+
+## Publications & Research
+- [Publication title], [Journal/Conference], [Year]
+- [Another publication], [Journal/Conference], [Year]
+
+## Certifications
+- [Certification Name] - [Issuing Organization] ([Year])
+- [Another Certification] - [Issuing Organization] ([Year])
+
+## Languages
+- [Language]: [Proficiency Level]
+- [Another Language]: [Proficiency Level]
+
+## Interests & Hobbies
+[Your interests and hobbies that might be relevant professionally]
+
+---
+
+**Instructions for Setup:**
+1. Replace all content in brackets with your actual information
+2. Remove sections that don't apply to you
+3. Add additional sections as needed
+4. Ensure the content contains your name for validation
+5. Save as `knowledge_base.txt`

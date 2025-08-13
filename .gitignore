@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# Environments
+.env
+venv/
+.env.*
+.venv
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Streamlit
+.streamlit/
+
+# FAISS persistence
+vector_store/
+
+# Project specific
+uploaded_content.txt
+*.pid
+*.log
+.test.*
+.emergency.*
+
+# Backup files
+*_backup_*
+unused_files/
+documentation/
+logs/
+test_files/
+
+# Misc
+.DS_Store
+Thumbs.db
