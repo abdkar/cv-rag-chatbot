@@ -36,6 +36,9 @@ def extract_pdf_text(uploaded_file: Any) -> str:
         reader = PdfReader(uploaded_file)
         text = ""
         
+        if len(reader.pages) == 0:
+            raise Exception("PDF file contains no pages")
+        
         for page_num, page in enumerate(reader.pages):
             try:
                 page_text = page.extract_text()
@@ -46,8 +49,47 @@ def extract_pdf_text(uploaded_file: Any) -> str:
                 continue
         
         if not text.strip():
-            raise Exception("No text could be extracted from the PDF")
+            raise Exception("No text could be extracted from the PDF. The file might be scanned or image-based.")
+        
+        return text.strip()
             
+    except Exception as e:
+        raise Exception(f"PDF processing failed: {str(e)}")
+
+
+def extract_text_file(uploaded_file: Any) -> str:
+    """
+    Extract text from text file with encoding detection.
+    
+    Args:
+        uploaded_file: Streamlit uploaded file object
+        
+    Returns:
+        Text content
+        
+    Raises:
+        Exception: If text processing fails
+    """
+    try:
+        # Reset file pointer to beginning
+        uploaded_file.seek(0)
+        
+        # Try different encodings
+        encodings = ['utf-8', 'utf-16', 'iso-8859-1', 'cp1252']
+        
+        for encoding in encodings:
+            try:
+                uploaded_file.seek(0)
+                content = uploaded_file.read().decode(encoding)
+                if content.strip():
+                    return content.strip()
+            except UnicodeDecodeError:
+                continue
+        
+        raise Exception("Could not decode text file with any supported encoding")
+        
+    except Exception as e:
+        raise Exception(f"Text file processing failed: {str(e)}")
         return text.strip()
     except Exception as e:
         raise Exception(f"Error extracting PDF text: {str(e)}")
@@ -121,26 +163,63 @@ def load_uploaded_content() -> Optional[str]:
     return None
 
 
-def save_uploaded_content(content: str) -> bool:
+def save_uploaded_content(uploaded_file: Any) -> Optional[str]:
     """
-    Save uploaded content to file.
+    Process and save uploaded file content.
     
     Args:
-        content: Content to save
+        uploaded_file: Streamlit uploaded file object
         
     Returns:
-        True if saved successfully, False otherwise
+        Extracted content if successful, None otherwise
     """
     try:
+        # Validate file size (limit to 10MB)
+        if uploaded_file.size > 10 * 1024 * 1024:
+            st.error("❌ File too large. Maximum size is 10MB.")
+            return None
+        
+        # Extract content based on file type
+        content = None
+        file_type = uploaded_file.type
+        
+        if file_type == "application/pdf":
+            st.info("📄 Processing PDF file...")
+            content = extract_pdf_text(uploaded_file)
+        elif file_type == "text/plain" or uploaded_file.name.endswith('.txt'):
+            st.info("📝 Processing text file...")
+            content = extract_text_file(uploaded_file)
+        else:
+            st.error(f"❌ Unsupported file type: {file_type}")
+            st.info("💡 Supported formats: PDF (.pdf), Text (.txt)")
+            return None
+        
+        if not content or not content.strip():
+            st.error("❌ No content could be extracted from the file")
+            return None
+            
+        # Basic content validation
+        if len(content) < 50:
+            st.warning("⚠️ File content seems very short. Make sure it contains your CV/Resume information.")
+        
         # Ensure directory exists
         os.makedirs(os.path.dirname(config.paths.uploaded_content_file), exist_ok=True)
         
+        # Save to file
         with open(config.paths.uploaded_content_file, "w", encoding="utf-8") as f:
             f.write(content)
-        return True
+        
+        # Show success message with file stats
+        word_count = len(content.split())
+        st.success(f"✅ Successfully processed **{uploaded_file.name}**")
+        st.info(f"� **{len(content):,}** characters • **{word_count:,}** words extracted")
+        
+        return content
+        
     except Exception as e:
-        st.error(f"Error saving uploaded content: {str(e)}")
-        return False
+        st.error(f"❌ Error processing file: {str(e)}")
+        st.info("💡 Try checking that your file is a valid PDF or text file")
+        return None
 
 
 def get_content_hash(content: str) -> str:

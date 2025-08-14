@@ -181,7 +181,10 @@ def run_full_application(quota_manager):
                 from src.utils.file_processing import save_uploaded_content
                 content = save_uploaded_content(uploaded_file)
                 if content:
-                    st.success("✅ File uploaded successfully!")
+                    # Successfully processed file
+                    use_uploaded = True  # Automatically switch to uploaded content
+                    st.success("✅ File uploaded and processed successfully!")
+                    st.info("🔄 Automatically switched to uploaded file mode")
                 else:
                     st.error("❌ Error processing file")
                     use_uploaded = False

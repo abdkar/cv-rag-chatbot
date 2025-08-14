@@ -1,10 +1,10 @@
-# 🤖 CV RAG Chatbot - Professional AI Assistant
+#  CV RAG Chatbot - Professional AI Assistant
 
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)]()
 [![Architecture](https://img.shields.io/badge/Architecture-Modular-blue)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow)]()
 
-### 🤖 AI & ML Stack
+###  AI & ML Stack
 [![AI](https://img.shields.io/badge/AI-Google%20Gemini-orange)]()
 [![LangChain](https://img.shields.io/badge/LangChain-0.2.10+-blue)]()
 [![RAG](https://img.shields.io/badge/RAG-FAISS%20Vector%20Store-purple)]()
@@ -16,19 +16,19 @@
 [![Animations](https://img.shields.io/badge/Animations-CSS3%20Keyframes-green)]()
 [![Icons](https://img.shields.io/badge/Icons-Authentic%20SVG-lightblue)]()
 
-### 🔧 Backend & Infrastructure
+###  Backend & Infrastructure
 [![Python](https://img.shields.io/badge/Python-3.8+-blue)]()
 [![Vector DB](https://img.shields.io/badge/Vector%20DB-FAISS-darkgreen)]()
 [![Environment](https://img.shields.io/badge/Environment-dotenv-lightgreen)]()
 [![API](https://img.shields.io/badge/API-Google%20Generative%20AI-orange)]()
 
-### 🚀 Deployment & DevOps
+###  Deployment & DevOps
 [![Docker](https://img.shields.io/badge/Docker-Containerized-blue)]()
 [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Multi%20Service-lightblue)]()
 [![Testing](https://img.shields.io/badge/Testing-Automated%20System%20Tests-green)]()
 [![Git](https://img.shields.io/badge/Git-Version%20Control-red)]()
 
-### 📦 Key Dependencies
+###  Key Dependencies
 [![Streamlit](https://img.shields.io/badge/streamlit-1.28.0+-red)]()
 [![LangChain Community](https://img.shields.io/badge/langchain--community-0.2.10+-blue)]()
 [![FAISS CPU](https://img.shields.io/badge/faiss--cpu-1.7.0+-purple)]()
