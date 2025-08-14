@@ -43,14 +43,14 @@ class APIQuotaManager:
         
         # Perform actual API check
         try:
-            from configs.app_config import get_google_api_key
+            from configs.app_config import get_google_api_key, ModelConfig
             import google.generativeai as genai
             
             api_key = get_google_api_key()
             genai.configure(api_key=api_key)
             
-            # Quick test with minimal token usage
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            # Quick test with working model
+            model = genai.GenerativeModel(ModelConfig.PRIMARY_MODEL)
             response = model.generate_content(
                 "Hi", 
                 generation_config={'max_output_tokens': 5}

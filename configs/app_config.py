@@ -13,17 +13,11 @@ load_dotenv()
 
 @dataclass
 class ModelConfig:
-    """Configuration for AI models and embeddings."""
-    model_name: str = "gemini-2.0-flash"  # Updated to your working model
-    temperature: float = 0.3
-    timeout: int = 15
-    embedding_dimension: int = 384
-    fallback_models: List[str] = field(default_factory=lambda: [
-        "gemini-2.0-flash",
-        "gemini-1.5-flash",
-        "gemini-1.5-pro",
-        "gemini-pro"
-    ])
+    """Model configuration settings."""
+    PRIMARY_MODEL = "gemini-1.5-flash-8b"
+    FALLBACK_MODELS = ["gemini-1.5-pro", "gemini-pro"]
+    TEMPERATURE = 0.7
+    MAX_OUTPUT_TOKENS = 1024
 
 @dataclass
 class VectorStoreConfig:
