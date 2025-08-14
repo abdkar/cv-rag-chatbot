@@ -7,72 +7,13 @@ import hashlib
 import google.generativeai as genai
 from langchain_google_genai import GoogleGenerativeAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
 # Load environment variables
 load_dotenv()
-
-@st.cache_resource
-def initialize_embeddings():
-    """Initialize embeddings with NumPy-free fallback system"""
-    import os
-    
-    # Skip all external libraries due to NumPy compatibility issues
-    # Use simple hash-based embeddings for maximum compatibility
-    try:
-        import hashlib
-        import re
-        
-        class SimpleHashEmbeddings:
-            def __init__(self):
-                self.dimension = 384
-            
-            def _text_to_vector(self, text):
-                # Simple text to vector conversion using only built-in Python
-                if not text:
-                    return [0.0] * self.dimension
-                
-                # Clean and tokenize text
-                words = re.findall(r'\w+', text.lower())
-                
-                # Create a simple hash-based vector
-                vector = [0.0] * self.dimension
-                for i, word in enumerate(words[:self.dimension]):
-                    # Use hash to create pseudo-random but deterministic values
-                    hash_val = hash(word) % self.dimension
-                    vector[hash_val] += 1.0
-                
-                # Simple normalization
-                total = sum(vector)
-                if total > 0:
-                    vector = [x/total for x in vector]
-                
-                return vector
-            
-            def embed_documents(self, texts):
-                return [self._text_to_vector(text) for text in texts]
-            
-            def embed_query(self, text):
-                return self._text_to_vector(text)
-            
-            # Make it callable for FAISS compatibility
-            def __call__(self, text):
-                if isinstance(text, list):
-                    return self.embed_documents(text)
-                else:
-                    return self.embed_query(text)
-        
-        embeddings = SimpleHashEmbeddings()
-        st.success("✅ Simple hash embeddings initialized!")
-        st.info("ℹ️ Using hash-based text processing (NumPy-free for maximum compatibility)")
-        return embeddings
-        
-    except Exception as e:
-        st.error(f"❌ All embedding approaches failed!")
-        st.error(f"Final error: {str(e)}")
-        raise Exception("Unable to initialize any embedding system")
 
 def extract_pdf_text(uploaded_file):
     """Extract text from PDF file using pypdf"""
@@ -177,8 +118,11 @@ def load_rag_pipeline(kb_hash: str, use_uploaded: bool = False):
     )
     chunks = text_splitter.split_text(cv_content)
     
-    # Create embeddings with cached initialization
-    embeddings = initialize_embeddings()
+    # Create embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={'device': 'cpu'}
+    )
     
     # Create vector store
     vectorstore = FAISS.from_texts(chunks, embeddings)
@@ -512,11 +456,11 @@ with st.sidebar:
             st.error(f"❌ Error: {str(e)}")
     
     # Current knowledge base info
-    st.subheader(" Knowledge Base Status")
+    st.subheader("📊 Knowledge Base Status")
     try:
         with open("knowledge_base.txt", "r", encoding="utf-8") as f:
             kb_content = f.read()
-        st.info(f" Base: {len(kb_content):,} characters")
+        st.info(f"📚 Base: {len(kb_content):,} characters")
         
         if os.path.exists("uploaded_content.txt"):
             with open("uploaded_content.txt", "r", encoding="utf-8") as f:
@@ -594,7 +538,7 @@ with main_col1:
             <span class='skill-tag'>LLM Safety</span>
         </div>
         <p style='font-size: 0.9rem; line-height: 1.4; opacity: 0.9;'>
-            Senior AI Engineer and Data Scientist specializing in Retrieval Augmented Generation, MLOps, and reliable AI systems development.
+            AI Engineer specializing in Retrieval Augmented Generation, MLOps, and reliable AI systems development.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -608,27 +552,36 @@ with main_col1:
 
 # Right Column - Chat Interface
 with main_col2:
-    st.markdown("#  Chat with my AI Professional Persona")
+    st.markdown("# 💬 Chat with my AI Professional Persona")
     st.markdown("*Ask about experience, architecture decisions, measurable impact, leadership, or how I deliver reliable AI systems. Answers are strictly grounded in my curated professional knowledge base (RAG retrieval).*")
     
     # Welcome message
-
+    st.info("""
+    **💡 Welcome to my AI-powered CV assistant!**
+    
+    Ask me anything about:
+    • 🎯 Professional experience and achievements
+    • 🏗️ Technical skills and project details  
+    • 📊 Research publications and impact
+    • 🚀 Machine learning and AI expertise
+    • 📈 Leadership and team collaboration
+    """)
     
     # Quick Start Questions
-    st.markdown("###  Quick Start Questions")
+    st.markdown("### 🚀 Quick Start Questions")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         if st.button("🔚 End-to-End ML", use_container_width=True):
             st.session_state.suggested_query = "Tell me about your end-to-end machine learning experience"
     with col2:
-        if st.button(" Technical skills", use_container_width=True):
-            st.session_state.suggested_query = "Tell me about your Technical skills experience"
+        if st.button("📊 Data Centric", use_container_width=True):
+            st.session_state.suggested_query = "What's your approach to data-centric AI development?"
     with col3:
-        if st.button(" Reliability", use_container_width=True):
+        if st.button("🔄 Reliability", use_container_width=True):
             st.session_state.suggested_query = "How do you ensure reliability in AI systems?"
     with col4:
-        if st.button(" RAG", use_container_width=True):
-            st.session_state.suggested_query = "Tell me about your experience with RAG development and deployment"
+        if st.button("⚡ Velocity", use_container_width=True):
+            st.session_state.suggested_query = "Tell me about your experience with fast AI development and deployment"
     
     # Chat Interface inside right column
     st.markdown("---")
