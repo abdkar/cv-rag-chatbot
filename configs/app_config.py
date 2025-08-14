@@ -14,15 +14,15 @@ load_dotenv()
 @dataclass
 class ModelConfig:
     """Model configuration settings."""
-    model_name: str = "gemini-1.5-flash-8b"
-    fallback_models: List[str] = field(default_factory=lambda: ["gemini-1.5-pro", "gemini-pro"])
+    model_name: str = "gemini-2.0-flash"
+    fallback_models: List[str] = field(default_factory=lambda: ["gemini-1.5-flash-8b", "gemini-1.5-pro", "gemini-pro"])
     temperature: float = 0.7
     max_output_tokens: int = 1024
     embedding_dimension: int = 384  # Standard dimension for embeddings
     
     # Also keep the class attributes for backward compatibility
-    PRIMARY_MODEL = "gemini-1.5-flash-8b"
-    FALLBACK_MODELS = ["gemini-1.5-pro", "gemini-pro"]
+    PRIMARY_MODEL = "gemini-2.0-flash"
+    FALLBACK_MODELS = ["gemini-1.5-flash-8b", "gemini-1.5-pro", "gemini-pro"]
     TEMPERATURE = 0.7
     MAX_OUTPUT_TOKENS = 1024
     EMBEDDING_DIMENSION = 384
