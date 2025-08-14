@@ -822,7 +822,7 @@ def render_knowledge_base_status():
     st.markdown("""
     <div class='kb-status-container'>
         <h4 style='color: #003147; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center;'>
-            📊 Knowledge Base Status
+            Knowledge Base Status
         </h4>
     </div>
     """, unsafe_allow_html=True)
