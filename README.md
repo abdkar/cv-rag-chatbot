@@ -1,8 +1,12 @@
 # CV RAG Chatbot - AI-Powered Professional Assistant
 
 ![python](https://img.shields.io/badge/python-3.9+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-orange.svg)
-![MLflow](https://img.shields.io/badge/MLflow-tracking-red.svg)
+![streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
+![langchain](https://img.shields.io/badge/langchain-0.2+-green.svg)
+![gemini](https://img.shields.io/badge/Google%20Gemini-2.0%20Flash-blue.svg)
+![faiss](https://img.shields.io/badge/FAISS-vector%20db-orange.svg)
+![docker](https://img.shields.io/badge/docker-ready-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 A sophisticated AI-powered chatbot that answers questions about your CV/Resume using Retrieval Augmented Generation (RAG) technology with Google Gemini 2.0 Flash integration.
 
@@ -144,8 +148,9 @@ cv-rag-chatbot/
 - **Frontend**: Streamlit with custom CSS
 - **AI Model**: Google Gemini 2.0 Flash
 - **Framework**: LangChain for RAG pipeline
-- **Vector Database**: FAISS with HuggingFace embeddings
+- **Vector Database**: FAISS with custom hash-based embeddings
 - **File Processing**: PyPDF for PDF handling
+- **Containerization**: Docker with Docker Compose
 - **Styling**: Custom CSS with responsive design
 
 ## 🔧 Configuration
@@ -164,7 +169,7 @@ GOOGLE_API_KEY=your_google_api_key_here
 
 ### RAG Pipeline
 - Text chunking with RecursiveCharacterTextSplitter
-- HuggingFace embeddings (all-MiniLM-L6-v2)
+- Custom hash-based embeddings for maximum compatibility
 - FAISS vector store for semantic search
 - Custom prompt templates for natural responses
 
