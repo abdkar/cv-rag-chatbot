@@ -10,16 +10,16 @@
 
 A sophisticated AI-powered chatbot that answers questions about your CV/Resume using Retrieval Augmented Generation (RAG) technology with Google Gemini 2.0 Flash integration.
 
-## 🌟 Features
+##  Features
 
-- **🤖 Advanced AI Integration**: Google Gemini 2.0 Flash for natural conversations
-- **🎯 RAG Technology**: Grounded responses from actual CV content
-- **🎨 Beautiful Interface**: Professional UI with dark blue theme and profile photo
-- **📚 Smart Content Management**: Dual vector stores for base and uploaded content
-- **🔒 Secure Validation**: Name verification for uploaded content
-- **📱 Responsive Design**: Works on desktop and mobile devices
+- **Advanced AI Integration**: Google Gemini 2.0 Flash for natural conversations
+- **RAG Technology**: Grounded responses from actual CV content
+- **Beautiful Interface**: Professional UI with dark blue theme and profile photo
+- **Smart Content Management**: Dual vector stores for base and uploaded content
+- **Secure Validation**: Name verification for uploaded content
+- **Responsive Design**: Works on desktop and mobile devices
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Python 3.10+
