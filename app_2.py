@@ -65,7 +65,8 @@ def initialize_embeddings():
                     return self.embed_query(text)
         
         embeddings = SimpleHashEmbeddings()
-        # Embeddings initialized silently for clean user experience
+        st.success("✅ Simple hash embeddings initialized!")
+        st.info("ℹ️ Using hash-based text processing (NumPy-free for maximum compatibility)")
         return embeddings
         
     except Exception as e:
