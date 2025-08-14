@@ -177,9 +177,13 @@ def run_full_application(quota_manager):
             )
             
             if uploaded_file:
+                # Show environment info
+                from src.utils.smart_adapter import show_environment_message
+                show_environment_message()
+                
                 # Process uploaded file
-                from src.utils.file_processing import save_uploaded_content
-                content = save_uploaded_content(uploaded_file)
+                from src.utils.smart_adapter import smart_file_upload
+                content = smart_file_upload(uploaded_file)
                 if content:
                     # Successfully processed file
                     use_uploaded = True  # Automatically switch to uploaded content
@@ -252,7 +256,10 @@ def get_or_build_pipeline_safe(use_uploaded, quota_manager):
     """Safely get or build pipeline with quota monitoring."""
     try:
         from src.core.simple_rag import get_simple_rag_pipeline
-        from src.utils.file_processing import get_content_hash, load_knowledge_base, load_uploaded_content
+        from src.utils.smart_adapter import smart_get_content_hash, smart_load_knowledge_base, smart_load_uploaded_content
+        get_content_hash = smart_get_content_hash
+        load_knowledge_base = smart_load_knowledge_base
+        load_uploaded_content = smart_load_uploaded_content
         
         # Load content
         if use_uploaded:
