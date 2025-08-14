@@ -14,6 +14,12 @@ load_dotenv()
 @dataclass
 class ModelConfig:
     """Model configuration settings."""
+    model_name: str = "gemini-1.5-flash-8b"
+    fallback_models: List[str] = field(default_factory=lambda: ["gemini-1.5-pro", "gemini-pro"])
+    temperature: float = 0.7
+    max_output_tokens: int = 1024
+    
+    # Also keep the class attributes for backward compatibility
     PRIMARY_MODEL = "gemini-1.5-flash-8b"
     FALLBACK_MODELS = ["gemini-1.5-pro", "gemini-pro"]
     TEMPERATURE = 0.7
