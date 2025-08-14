@@ -972,7 +972,7 @@ def render_chat_header():
     st.markdown("""
     <div style='text-align: center; margin: 2rem 0; animation: fadeInUp 0.8s ease-out;'>
         <h2 style='color: #003147; font-weight: 700; font-size: 2.2rem; margin-bottom: 0.5rem;'>
-            💬 Chat with my AI Professional Persona
+             Chat with my AI Professional Persona
         </h2>
         <p style='color: #666; font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto;'>
             Ask about experience, architecture decisions, measurable impact, leadership, or how I deliver reliable AI systems. 

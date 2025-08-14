@@ -194,7 +194,7 @@ def run_full_application(quota_manager):
                     use_uploaded = False
         
         # Knowledge base status
-        st.markdown("### 📊 Knowledge Base Status")
+        st.markdown("###  Knowledge Base Status")
         try:
             with open('knowledge_base.txt', 'r', encoding='utf-8') as f:
                 content = f.read()
@@ -224,7 +224,7 @@ def run_full_application(quota_manager):
     
     # Right Column - Chat Interface with Quota Protection
     with main_col2:
-        st.markdown("# 💬 Chat with my AI Professional Persona")
+        st.markdown("#  Chat with my AI Professional Persona")
         st.markdown("*Ask about experience, architecture decisions, measurable impact, leadership, or how I deliver reliable AI systems. Answers are strictly grounded in my curated professional knowledge base (RAG retrieval).*")
         
         # Get or build RAG pipeline with error handling
@@ -285,7 +285,7 @@ def get_or_build_pipeline_safe(use_uploaded, quota_manager):
 
 def render_quick_start_questions():
     """Render quick start question buttons."""
-    st.markdown("### ⚡ Quick Start Questions")
+    st.markdown("###  Quick Start Questions")
     st.markdown("Click any button below to start exploring my professional experience and capabilities")
     
     col1, col2, col3, col4 = st.columns(4)
@@ -415,7 +415,7 @@ def run_quota_safe_application(quota_manager):
         
         st.markdown("---")
         
-        st.markdown("### 📊 Knowledge Base Status")
+        st.markdown("###  Knowledge Base Status")
         st.success("✅ Knowledge Base Available")
         st.info("💡 All content is stored locally and ready to use when API quota resets")
     
