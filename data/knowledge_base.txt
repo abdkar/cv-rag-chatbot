@@ -1,0 +1,317 @@
+AbdolamirKarbalaieCURRICULUM VITAE
+Professional Summary
+Highly skilled and experienced Data Scientist with a strong background in applied
+medical technology, machine learning, and educational leadership. Proficient in a
+variety of data analysis tools and programming languages, including Python, R, and
+MATLAB. Demonstrated success in innovative research projects and in developing
+practical solutions in healthcare technology.
+Education
+Ph.D in Applied Medical Technology Royal Institute of Technology (KTH), Stockholm, Sweden
+School of Engineering Sciences in Chemistry, Biotechnology and Health
+M.Sc. in Mathematics Isfahan University of Technology (IUT) Isfahan, Iran
+Department of Mathematics
+B.Sc. in Mathematics Isfahan University, Isfahan, Iran
+Department of Mathematics
+Diploma in Mathematica and Physics Hatef High School, Isfahan, Iran
+Technical Skills
+Data Analysis Tools and Languages
+Python (TensorFlow, PyTorch, Keras, scikit-learn, Sktime, PyCaret, Matplotlib), R,
+SAS, IBM SPSS, C++, MATLAB, GitHub, SQL, MySQL, ETL, Jupyter Notebooks, Excel,
+Power BI, Tableau & Spark (prior experience)
+Machine Learning and AI
+Deep Learning, Computer Vision, Explainable AI, Azure ML, AWS Services, Google
+Colab
+Natural Language Processing (NLP)
+Proficient in transformer-based models (e.g., BERT, GPT), sentiment analysis, text
+summarization, named entity recognition (NER), AI Automation Systems and AI/ML-
+powered Android app development
+Languages
+English (fluency), Persian (mother tongue), Swedish (intermediate level)
+Teaching and Supervision
+COURSE TITLE
+Probability & Statistics, Data Analysis in Excel, Numerical Data Analysis, Graph The-
+ory, Engineer Mathematics, Numerical Analysis, Data mining using SAS, Discrete
+Mathematics, Calculus I, II, III
+TEACHING ASSISTANT (KTH Royal Institute of Technology )
+3D Image reconstruction in Medicine
+GRADUATE STUDENTS SUPERVISION EXPERIENCES
+- Supervising one master student in applying convolutional neural network for fight
+recognition. - Supervising one undergraduate student for a two-month program in
+fighting recognition. - Supervising ten undergraduate students for a two-month pro-
+gram in mathematics
+.
+Abdolamir Karbalaie
+Data Scientist | Applied Medical
+Technologist | Educator
+Contact
+Orienteringsstigen 2B, SE 903 38
+Umeå
+Sweden
+(Willing to relocate)
+Tel: +46 (76) 260 0332
+Email:abdolamir.karbalaie
+@gmail.com
+Linkedin profile
+WORK EXPERIENCE
+2025 – Umeå University Umeå, Sweden
+Staff Scientist at Department of Community Medicine and Rehabilitation
+Transdisciplinary research in sports rehab
+- Leading development of machine learning tools for biomedical signal and motion
+data.
+- Supporting clinical studies by building analysis pipelines and tools.
+- Applying statistical and ML methods to extract insights from imaging datasets.
+- Collaborating with cross-disciplinary teams on research and software development
+2023– 2025 Umeå University Umeå, Sweden
+Postdoc at Department of Community Medicine and Rehabilitation
+Transdisciplinary research in sports rehab:The project’s goal is to evaluate the move-
+ment control of people with cruciate ligament (ACL) injuries and how to measure
+this, partly with various tests and with detailed movement analysis in high-tech labs.
+- Working with time series data
+- Developed and validated a Machine Learning model utilizing biomechanical (time
+series) data to categorize fear of re-injury in ACL reconstruction patients (Python).
+- Develop and implement necessary tools and workflows for data analysis related to
+biomechanical data.
+- Identify important biomechanical predictors of fear via Explainable Artificial Intelli-
+gence ((XAI))
+- Write research papers and reports
+2019- 2021 Mid Sweden University Sundsvall, Sweden
+Postdoc at Department of Information Systems and Technology (IST)
+MiLo project: investigating 3D imaging for improving segmentation, positioning, and
+categorization of objects in a safety-critical environment.
+- Working with video data
+- Video analysis to detect multiple anomalous activities.
+- Deep Learning and Machine Learning application in video analysis with Python.
+2013–2019 KTH Royal Institute of Technology Stockholm, Sweden
+PhD. student
+Transdisciplinary research in medical field:development and clinical evaluation of a novel
+analysis toolkit for capillaroscopic images.
+- Working with medical record and image data.
+- Researched the detection, diagnosis, and treatment of Lupus patients based on ca-
+pilarescopic images, blood and urine tests.
+- Responsible for the confirmation and validity of accurate test results with an em-
+phasis on detail.
+- Designing practical algorithms based on machine learning techniques to process
+data in Matlab that improved speed of measurement by approximately 30% and ac-
+curacy by 18% .
+- Programming to categorize and analyze data sets using R
+- High dimensional data processing and dimensionality reduction techniques.
+Note: I was also in charge of collecting, transforming, and organizing data to con-
+clude, make predictions, write reports and publish articles in reputable academic
+journals.
+2008–2013 Naghsh Jahan Intelligent and Communication Engineering (NJICE) CO. Isfahan, Iran
+Digital marketing data analyst
+NJICE CO was a consultant’s website design services company. I worked in this
+company as a digital marketing data analyst.
+- Explain the result of the processed data to business users.
+- Converting business requirements into dashboards/reports/visuals.
+2005–2008 Islamic Azad University of Najaf Abad Isfahan, Iran
+lecturer
+Full teaching, grading, and management responsibilities for large (+100 student) and
+small (+20) courses.
+HONORS AND AWARDS
+2024 Selected as a Research Highlight in Nature Climate Change
+ransportation Research Part D: Transport and Environment (Abstract Title: ”Identi-
+fication of climatic failures for railway infrastructure assets using machine learning”)
+2024 Selected as one of 10 competing posters for Best Poster Award.
+Scandinavian Sports Medicine Congress (Abstract Title: ”Beyond Self-Reports - Us-
+ing Deep Learning on Biomechanical Data from Side Hops to Identify Fear of Re-injury
+Following ACL Ruptur”)
+2012 Industrial scholarship to study PhD at KTH Royal Institute of Technology.
+KTH Royal Institute of Technology is one of the top Public universities in Stockholm,
+Sweden. It is ranked ≠98 in QS Global World Rankings 2021.
+2013 Travel grant to participate at the joint SJTU-KTH summer school in "Frontiers in interdisciplin-
+ary Biomedical Research" at Shanghai Jiao Tong University
+Shanghai Jiao Tong University is one of the top Public universities in Shanghai, China
+Mainland. It is ranked ≠47 in QS Global World Rankings 2021
+Grant
+2025 Research Grant Application Funding
+Grant receiver
+Awarded 100K SEK by Idrottshögskolan to develop a VR-based ACL rehabilitation in-
+tervention integrating neuromuscular retraining with machine learning for fear clas-
+sification.
+2014–2018 An efficient method to distinguish capillary patterns in patients with SLE.
+Co-Executor and Grant receiver
+Funded by Medical Image and Signal Processing Research Center (MISP) and sup-
+ported by Isfahan University of Medical Sciences.
+2014–2018 Preparing and analysis the Nailfold Capillaroscopic Database of Patients with Lupus Disease
+Co-Executor and Grant receiver
+Funded by Medical Image and Signal Processing Research Center (MISP) and sup-
+ported by Isfahan University of Medical Sciences.
+2014–2017 Preparing and analysis the Nailfold Capillaroscopic Database of Healthy Patients
+Co-Executor and Grant receiver
+Funded by MISP and supported by Isfahan University of Medical Sciences, and Isfa-
+han Al-Zahra hospital.
+2014–2016 Improving the Quality of Images in Nailfold Capillaroscopy to Measure Capillary Dimension
+Co-Executor and Grant receiver
+Funded by MISP and supported by Isfahan University of Medical Sciences, and Isfa-
+han Al-Zahra hospital.
+Licenses & certifications
+2021 Machine Learning Pipelines with Azure ML Studio
+Issuing organization: Coursera
+Credential ID: VTKTTEYPC5RN
+2021 Azure Synapse SQL Pool - Implement Polybase
+Issuing organization: Coursera
+Credential ID: 4RVJWZ4BU2GH
+2021 Foundations: Data, Data, Everywhere
+Issuing organization: Google
+Credential ID: SVVSWJWT3K4E
+2021 Ask Questions to Make Data-Driven Decisions
+Issuing organization: Google
+Credential ID: RJKXKFNS2LEC
+2021 Getting Started with the AWS Cloud Essentials AWS Training and Certification
+Amazon Web Services
+2021 AWS Cloud Practitioner Essentials Day AWS Training and Certification
+Amazon Web Services
+2021 AWS Technical Essentials Day AWS Training and Certification
+Amazon Web Services
+2021 Machine Learning Basics AWS Training and Certification
+Amazon Web Services
+2017 Transparency in peer review ELSEVIER (Researcher Academy Certification)
+ELSEVIER
+2015 Photomicrography Course in Photomicrography )
+KTH (School of Technology and Health)
+Publications
+THESIS:
+• 2018: A. Karbalaie *”Novel Analysis Toolkit for Capillaroscopic Images: Development and Clinical
+Evaluation ” PhD. thesis, US, AB ,1-85,URN: urn:nbn:se:kth:diva-239300.
+• 2002: A. Karbalaie *”Homoclinic and Heteroclinical Bifurcations Near to the Twisted Heteroclinical
+Cycle” MSc. Thesis, Mathematics Department, Isfahan University of Technology.
+JOURNAL PAPER:
+* Corresponding authors
+• 2025: A. Karbalaie *, A. Grinberg, A. Strong, T. Nordström, J. Selling, H. Grip, K. Prorok, C.K. Häger
+”Identifying fear of re-injury after anterior cruciate ligament injury using machine learning based on
+muscle activation and joint biomechanics during side hops ” submitted
+• 2024: A. Karbalaie *, A. Strong, T. Nordström, L. Schelin, J. Selling, H. Grip, K. Prorok, C.K. Häger
+”Beyond self-reports after anterior cruciate ligament injury – Machine learning methods for classi-
+fying and identifying movement patterns related to fear of re-injury ” submitted
+• 2024: K. Soleimani, A. Karbalaie, A. Kasraeia, E. Haghighia, S. M. Famurewaa, A.H.S Garmabakia
+”Identification of climatic failures for railway infrastructure assets using machine learning ” Trans-
+portation Research Part D: Transport and Environment, 135, 104371, DOI: 10.1016/j.trd.2024.104371
+• 2022: A. Karbalaie *, F.Abtahi, M. Sjöström ”Event detection in surveillance videos: a review ” Mul-
+timed Tools Appls, DOI:10.1007/s11042-021-11864-2
+• 2019: A. Karbalaie, Z. Emrani, A. Fatemi, M. Etehadtavakol, B. Erlandsson ”A state-of-the-art review
+for assessing nailfold capillaroscopy images ” Clin Rheumatol 38, 2343–2354, DOI:10.1007/s10067-
+019-04644-9, [ISI, IF=2.980].
+• 2019: A. Fatemi, Z. Emrani, M. Etehadtavakol, B. Erlandsson, A. Smiley, A. Karbalaie *”Nailfold mi-
+crovascular changes in patients with systemic lupus erythematosus and their associative factors
+” Microvasc. Res., DOI:10.1016/j.mvr.2019.103910, [ISI, IF=3.514].
+• 2018: A. Karbalaie * ,M. Etehadtavakol, F. Abtahi, A. Fatemi, Z.Emrani, B. Erlandsson ”Image En-
+hancement Effect on Inter and Intra-observer Reliability of Nailfold Capillary Assessment ” Mi-
+crovasc. Res., DOI:10.1016/j.mvr.2018.06.005, [ISI, IF=3.514].
+• 2017: A. Karbalaie *, F. Abtahi, A. Fatemi, M. Etehadtavakol, Z. Emrani, and B.-E. Erlandsson, “El-
+liptical broken line method for calculating capillary density in nailfold capillaroscopy: Proposal
+and evaluation,” Microvasc. Res., vol. 113, pp. 1–8, 2017, DOI: 10.1016/j.mvr.2017. 04.002, [ISI,
+IF=3.514]
+• 2016: Z. Emrani, A. Karbalaie *, A. Fatemi, M. Etehadtavakol and B.-E. Erlandsson, ”Capillary dens-
+ity: An important parameterin nailfold capillaroscopy”, Microvascular Research, vol. 109, pp. 7-18,
+2017, DOI: 10.1016/j.mvr.2016.09.001,[ISI, IF=3.514].
+• 2015: M. Etehad Tavakol, A. Fatemi, A. Karbalaie *, Z. Emrani, and B.-E. Erlandsson, ”Nailfold ca-
+pillaroscopy in rheumatic diseases: Which parameters should be evaluated?,” BioMed Research
+International, vol. 2015, 2015, DOI:10.1016/j.mvr.2016.09.001, [ISI, IF=3.411].
+• 2014: A. Karbalaie *, Montazer M.M., Hamid Muhammed H.“Application of Homo-separation of
+variables method on non linear system of PDEs”,WSEAS Transactions on Mathematics,Vol.13 :992-
+1000, 2014
+• 2014: A. Karbalaie *, Muhammed H. H., Shabani M., Montazer M. M., ”Solution of Partial Differential
+Equation Using Homo-Separation of Variables” , International Journal of Nonlinear Science, Vol.17,
+No. 1: 89-90, 2014.
+•2014: A. Karbalaie *, Montazer M.M., Hamid MuhammedH.“Exact Solution of Time-Fractional Par-
+tial Differential Equations Equation Using Sumudu Transform ”, WSEAS Transactions on Mathem-
+atics, Vol. 13:142-151, 2014.
+• 2013: A. Karbalaie *, Muhammed H. H. , Erlandsson B.-E. “Using Homo-Separation of Variables
+for Solving Systems of Nonlinear Fractional Partial Differential Equations” , International Journal of
+Mathematics and Mathematical Sciences, (2013) 2013. DOI:10.1155/2013/421378
+• 2012: A. Karbalaie *, Montazer M. M., Hamid Muhammed H. “New Approach to Find the Exact
+Solution of Fractional Partial Differential Equation”, WSEAS Transactions on Mathematics, WSEAS,
+11(10):908-917, 2012.
+• 2012: Hamid Muhammed H., A. Karbalaie, Montazeri M. M. “Using Spectral Descriptive Signatures
+for Industrial Plume Detection”, WSEAS Transactions on Environment and Development, WSEAS,
+8(4):120-132 ,2012.
+CONFERENCE PROCEEDINGS:
+• 2024: K. Soleimani-Chamkhorami, A.H.S Garmabaki, A. Karbalaie, A. Kasraei and S. Famurewa ,“
+Predicting Climatic Failures in Railway Infrastructure utilizing Machine Learning”, 22nd Nordic Sem-
+inar on Railway Technology, KTH Royal Institute of Technology Stockholm, 18-19 June, 2024
+• 2024: A. Karbalaie, A. Strong, T. Nordström, L. Schelin, J. Selling, H. Grip, K. Prorok, C. K. Häger, “
+Beyond Self-Reports - Using Deep Learning on Biomechanical Data from Side Hops to Identify Fear
+of Re-injury Following ACL Ruptur”, Scandinavian Sports Medicine Congress, Copenhagen, Den-
+mark, 1-3 February, 2024,
+• 2020: H.A. Jafari-Varzaneh, A. Karbalaie“ Assessment of successful new lifestyle criteria between
+the three countries of Sweden, Iran, and Italy with three different coronavirus strategies”, 1th Na-
+tional conference on health knowledge production and governance in the post-corona, Iran, 11-12
+November (2020),
+• 2016: A. Karbalaie *, A. Fatemi, M. Etehadtavakol, F. Abtahi, Z. Emrani and B.-E. Erlandsson, “
+Counting Capillaries in Nailfold Capillaroscopy: State of the Art and a Proposed Method”, T IEEE-
+EMBS Conference on Biomedical Engineering and Science, Malaysia, December (2016),
+DOI:10.1109/IECBES.2016.7843437
+• 2014 A. Karbalaie *, Y.Abed, M.M. Montazeri, “ Solving a system of nonlinear fractional PDEs using
+a combination of separation of variables”, The 6th Mathematics Conference of Payam Noor Uni-
+versity (PNU), Isfahan: 37, 6-7 March (2014),
+• 2012: A. Karbalaie *, M.M. Montazeri, Y. Abed, “ A Novel Analytical Method for Solving Fractional
+Partial Differential Equations”, The 5th Mathematics Conference of Payam Noor University (PNU),
+Shiraz: 37, 24-25 October (2012),
+• 2011: M.M. Montazeri, A. Karbalaie *, Y.Abed, “ Solutions to Time-Fractional Diffusion in finite cylin-
+der”, The 4th Mathematics Annual National Conference of Payame Noor University (PNU), Ardabil,
+Iran, 2011
+• 2010: A. Karbalaie *, Y. Abed, M.M. Montazeri, “Analysis Of Radial Diffusion In Spherical Cordin-
+ates Using Diffusion Equation with Fractional Time Differentials”, Third Conferance on Mathemat-
+ics, Payame Nour University (PNU), Mashad, 2010.
+• 2009: A. Karbalaie *, Y. Abed, “ Dynamical Analysis of Fractional Order Bonhoeffer–Van Der Pol
+Equations”, Second Specially Conference on Mathematics, Payame Nour Univerity of Mazandaran,
+14-15 May 2009.
+• 2009: A. Karbalaie *, Y. Abed, “Application of transform method for solving differential Equa-
+tions”Week research , Islamic Azad University of Najaf Abad, (2009)
+• 2008: A. Karbalaie *, Y. Abed, J Yarahmadi, “Modified homotopy Application to Riccati equa-
+tion of fractional order”, Third Scientific-Specially Conference on physics, Payame Nour Univerity
+of Khozestan, 14-16 Des 2008.
+• 2005: M. Tabatabaie, A. Karbalaie, M. Jalali, Z. Tabatabaie, “Application XRD & SEM and induction
+Plasma importance in Mineral”, The first regional conference of Modern Mining methods, (2005).
+CONFERENCE CONTRIBUTIONS:
+• 2007: A. Karbalaie *“ Reduce computational complexity to increase CPU efficiency use”, Week
+research , Islamic Azad University of Meymeh, (2007).
+♥ Number of citations were obtained from Google Scholar, where an automatically updated public-
+ation list of mine can be found by following the link:
+https://scholar.google.se/citations?user=Noi7TFUAAAAJhl=sv
+International Collaboration
+- Assistant prof. Abbas Smiley, Indiana University, Bloomington, IN, USA. One paper published.
+- Associated prof. Mahnaz Etehadtavakol, Medical Image and Signal Processing Research Center,
+five paper published.
+- Associated prof. Alimohammad Fatemi, Isfahan University of Medical Sciences. five paper pub-
+lished and and one is under preparation
+Commitment to the Scientific Community
+Referee for the journals:Journal of Biophotonics, Abstract and Applied Analysis, Clinical Rheumat-
+ology, Asian Journal of Mathematics and Computer Research, Microvascular Research, WSEAS
+Transactions on Mathematics, Pramana - Journal of Physics, International Journal of Pattern Re-
+cognition and Artificial Intelligence.
+• Reviewer for International Conference on Biomedical Engineering and Biotechnology (ICBE)
+♥ My peer review contributions can be found on Publons, which provides a free academic service
+to track, verify and showcase peer review and editorial contributions for academic journals.
+https://publons.com/researcher/1336261/abdolamir-karbalaie/
+
+
+
+RAG and AI Systems Experience
+
+**Abdolamir Karbalaie** has extensive hands-on experience in developing and implementing **Retrieval-Augmented Generation (RAG)** systems and advanced AI architectures. His expertise includes:
+
+### **RAG System Development Experience**
+Abdolamir has designed and built sophisticated RAG-based AI assistants, demonstrating deep technical knowledge in:
+- **RAG Architecture Design**: Developed a comprehensive RAG system using curated knowledge bases with grounded responses
+- **Vector Databases**: Implemented FAISS vector stores with HuggingFace embeddings for semantic search
+- **LLM Integration**: Integrated Google Gemini and other large language models for natural language processing
+- **Prompt Engineering**: Created custom prompt templates for specialized domain responses
+- **Anti-Hallucination Techniques**: Implemented source attribution and fact verification systems
+
+### **Advanced AI System Architecture**
+Abdolamir has built a sophisticated **Dual-Brain Architecture** system featuring:
+- **Dual Processing**: Combined RAG (Retrieval-Augmented Generation) for semantic queries with Analytics Processing for data analysis
+- **Multi-Persona AI**: Developed 4 distinct AI personas tailored for different user experiences (Product Owner, Marketing, Analyst, General User)
+- **Smart Query Routing**: Implemented intelligent systems that automatically detect whether questions need analytics or semantic processing
+- **Production-Ready Systems**: Built complete APIs with Docker deployment and comprehensive testing frameworks
+
+### **Technical Implementation Skills**
+- **Vector Search**: Expertise in semantic similarity search and document retrieval systems
+- **Machine Learning Pipelines**: Integration of ML models with real-time processing capabilities
+- **Natural Language Processing**: Advanced work with transformer models, text embeddings, and language generation
+- **System Architecture**: Experience designing scalable AI systems with multiple processing modes
+- **API Development**: Built production-ready AI assistants with proper deployment infrastructure
+
+This RAG and AI systems experience complements Abdolamir's strong background in machine learning, data science, and biomedical applications, demonstrating his ability to apply cutting-edge AI technologies to solve complex real-world problems.
