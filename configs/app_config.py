@@ -6,14 +6,24 @@ Contains all configuration constants and settings.
 import os
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 @dataclass
 class ModelConfig:
     """Configuration for AI models and embeddings."""
-    model_name: str = "gemini-2.0-flash-exp"
+    model_name: str = "gemini-2.0-flash"  # Updated to your working model
     temperature: float = 0.3
     timeout: int = 15
     embedding_dimension: int = 384
+    fallback_models: List[str] = field(default_factory=lambda: [
+        "gemini-2.0-flash",
+        "gemini-1.5-flash",
+        "gemini-1.5-pro",
+        "gemini-pro"
+    ])
 
 @dataclass
 class VectorStoreConfig:

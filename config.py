@@ -72,6 +72,8 @@ class AppConfig:
                 "abdolamir karbalaie", 
                 "ABDOLAMIR KARBALAIE",
                 "Abdolamir",
+                "Amir",
+                "amir",
                 "Karbalaie"
             ]
 

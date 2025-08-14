@@ -648,10 +648,10 @@ def render_profile_section():
             Abdolamir Karbalaie
         </h1>
         <div style='margin-bottom: 1.5rem;'>
-            <span class='skill-tag'>🤖 AI Engineer</span>
-            <span class='skill-tag'>🔍 RAG & GenAI</span>
-            <span class='skill-tag'>⚙️ MLOps</span>
-            <span class='skill-tag'>🛡️ LLM Safety</span>
+            <span class='skill-tag'> AI Engineer</span>
+            <span class='skill-tag'> RAG & GenAI</span>
+            <span class='skill-tag'> MLOps</span>
+            <span class='skill-tag'> LLM Safety</span>
         </div>
         <p style='font-size: 1rem; line-height: 1.6; opacity: 0.95; max-width: 600px; margin: 0 auto; text-shadow: 0 1px 2px rgba(0,0,0,0.1);'>
             Senior AI Engineer and Data Scientist specializing in <strong>Retrieval Augmented Generation</strong>, 
@@ -767,19 +767,19 @@ def render_quick_start_buttons() -> Optional[str]:
     suggested_query = None
     
     with col1:
-        if st.button("🎯 End-to-End ML", use_container_width=True, key="ml_exp"):
+        if st.button("End-to-End ML", use_container_width=True, key="ml_exp"):
             suggested_query = "Tell me about your end-to-end machine learning experience and the complete ML lifecycle projects you've delivered"
     
     with col2:
-        if st.button("�️ Technical Skills", use_container_width=True, key="tech_skills"):
+        if st.button("Technical Skills", use_container_width=True, key="tech_skills"):
             suggested_query = "What are your core technical skills and expertise areas? Tell me about your proficiency with different technologies and frameworks"
     
     with col3:
-        if st.button("🛡️ AI Reliability", use_container_width=True, key="reliability"):
+        if st.button("AI Reliability", use_container_width=True, key="reliability"):
             suggested_query = "How do you ensure reliability, safety, and robustness in AI systems? What practices do you follow for responsible AI development?"
     
     with col4:
-        if st.button("� RAG Systems", use_container_width=True, key="rag_exp"):
+        if st.button("RAG Systems", use_container_width=True, key="rag_exp"):
             suggested_query = "Tell me about your experience with RAG (Retrieval Augmented Generation) development, deployment, and optimization"
     
     return suggested_query

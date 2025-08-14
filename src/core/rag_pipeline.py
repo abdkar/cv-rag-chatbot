@@ -40,7 +40,7 @@ class RAGPipeline:
     
     def _initialize_llm(self) -> GoogleGenerativeAI:
         """
-        Initialize the Google Gemini LLM.
+        Initialize the Google Gemini LLM with fallback models.
         
         Returns:
             Configured GoogleGenerativeAI instance
@@ -49,13 +49,28 @@ class RAGPipeline:
         api_key = get_google_api_key()
         genai.configure(api_key=api_key)
         
-        # Initialize LLM
-        return GoogleGenerativeAI(
-            model=config.model.model_name,
-            google_api_key=api_key,
-            temperature=config.model.temperature,
-            timeout=config.model.timeout
-        )
+        # Try primary model first, then fallbacks
+        models_to_try = [config.model.model_name] + config.model.fallback_models
+        
+        for model_name in models_to_try:
+            try:
+                llm = GoogleGenerativeAI(
+                    model=model_name,
+                    api_key=api_key,
+                    temperature=config.model.temperature,
+                    timeout=config.model.timeout
+                )
+                # Test the model with a simple query
+                test_response = llm.invoke("Hello")
+                if test_response:
+                    print(f"Successfully initialized model: {model_name}")
+                    return llm
+            except Exception as e:
+                print(f"Failed to initialize {model_name}: {str(e)}")
+                continue
+        
+        # If all models fail, raise an error
+        raise Exception("All fallback models failed. Please check your API quota and try again later.")
     
     def _create_vector_store(self, content: str) -> FAISS:
         """
